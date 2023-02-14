@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "AG Mobile",
+  "name": "Antonio Gonzalez Gea - Napptilus Technical Test",
   "icons": [
     {
       "src": "favicon.ico",
@@ -19,7 +19,7 @@
     }
   ],
   "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "display": "fullScreen",
+  "theme_color": "#dc143c",
+  "background_color": "#efefef"
 }

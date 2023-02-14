@@ -4,10 +4,16 @@ import styles from './Layout.module.scss'
 export function Layout() {
     return (
         <div>
-            <nav>
+            <nav className={styles.layout__navbar}>
                 <ul>
-                    <li className={ styles.layout__test }>
-                        <Link to="/">Home</Link>
+                    <li>
+                        <Link to="/">
+                            <img
+                                src="/logo.svg"
+                                alt="AG Mobile"
+                                className={ styles.layout__logo }
+                            />
+                        </Link>
                     </li>
                     <li>
                         <Link to="/products/test">Test Product</Link>
