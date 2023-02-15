@@ -18,14 +18,15 @@ export function ProductListItem({ product }) {
             <span className={styles['product-list-item__brand']}>
                 {product.brand}
             </span>
-            <span className={styles['product-list-item__price']}>
-                {product.humanPrice}
-            </span>
+            { !product.soldOut
+                ? <span className={styles['product-list-item__price']}>{product.humanPrice}</span>
+                : <span className={styles['product-list-item__sold-out']}>Agotado!</span>
+            }
             <Link
                 className={styles['product-list-item__link']}
                 to={`/products/${product.id}`}
             >
-                <span class="sr-only">
+                <span className="sr-only">
                     Ver producto
                 </span>
             </Link>
