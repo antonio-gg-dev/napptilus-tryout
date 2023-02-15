@@ -5,14 +5,23 @@ export class ProductSummaryService {
      * @returns {Promise<ProductSummary[]>}
      */
     async getProductList() {
-        const response = await fetch('https://itx-frontend-test.onrender.com/api/product')
+        const lastCall = localStorage.getItem('getProductList.lastCall')
+        const hour = 60 /* minutes */ * 60 /* seconds */ * 1000 /* milliseconds */
 
-        if (!response.ok) {
-            // TODO: Handle errors
-            return []
+        if ((Date.now() - lastCall) > hour) {
+            const response = await fetch('https://itx-frontend-test.onrender.com/api/product')
+
+            if (response.ok) {
+                localStorage.setItem('getProductList.lastCall', Date.now())
+                localStorage.setItem('getProductList.rawProductSummaryList', JSON.stringify(await response.json()))
+            }
         }
 
-        return (await response.json()).map((rawProductSummary) => {
+        const rawProductSummaryList = JSON.parse(
+            localStorage.getItem('getProductList.rawProductSummaryList') ?? '[]'
+        )
+
+        return rawProductSummaryList.map((rawProductSummary) => {
             return new ProductSummary(
                 rawProductSummary.id,
                 rawProductSummary.brand,
