@@ -19,11 +19,11 @@ export class ProductSummary {
         price,
         imageUrl,
     ) {
-        this.id = id.toString()
-        this.brand = brand.toString()
-        this.model = model.toString()
+        this.id = String(id)
+        this.brand = String(brand)
+        this.model = String(model)
         this.price = Number(price) || null
-        this.imageUrl = imageUrl
+        this.imageUrl = String(imageUrl)
     }
 
     get name() {

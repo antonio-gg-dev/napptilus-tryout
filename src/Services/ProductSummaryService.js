@@ -13,7 +13,10 @@ export class ProductSummaryService {
 
             if (response.ok) {
                 localStorage.setItem('getProductList.lastCall', Date.now())
-                localStorage.setItem('getProductList.rawProductSummaryList', JSON.stringify(await response.json()))
+                localStorage.setItem(
+                    'getProductList.rawProductSummaryList',
+                    JSON.stringify(await response.json())
+                )
             }
         }
 

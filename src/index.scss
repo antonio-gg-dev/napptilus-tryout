@@ -1,7 +1,7 @@
 @tailwind base;
 
 body {
-  @apply min-h-screen bg-fixed bg-cover bg-center;
+  @apply min-h-screen bg-fixed bg-cover bg-center overflow-x-hidden overflow-y-scroll;
   background-image: url("~/public/background.png");
 }
 
