@@ -1,6 +1,6 @@
 import {ProductSummary} from "../Entities/ProductSummary";
 
-export class ProductService {
+export class ProductSummaryService {
     /**
      * @returns {ProductSummary[]}
      */
@@ -11,35 +11,35 @@ export class ProductService {
                 "Acer",
                 "Iconia Talk S",
                 "170",
-                "https://2gm2eu9uuw.us-east-1.awsapprunner.com/images/ZmGrkLRPXOTpxsU4jjAcv.jpg"
+                "https://itx-frontend-test.onrender.com/images/ZmGrkLRPXOTpxsU4jjAcv.jpg"
             ),
             new ProductSummary(
                 "cGjFJlmqNPIwU59AOcY8H",
                 "Acer",
                 "Liquid Z6 Plus",
                 "250",
-                "https://2gm2eu9uuw.us-east-1.awsapprunner.com/images/cGjFJlmqNPIwU59AOcY8H.jpg"
+                "https://itx-frontend-test.onrender.com/images/cGjFJlmqNPIwU59AOcY8H.jpg"
             ),
             new ProductSummary(
                 "8hKbH2UHPM_944nRHYN1n",
                 "Acer",
                 "Liquid Z6",
                 "120",
-                "https://2gm2eu9uuw.us-east-1.awsapprunner.com/images/8hKbH2UHPM_944nRHYN1n.jpg"
+                "https://itx-frontend-test.onrender.com/images/8hKbH2UHPM_944nRHYN1n.jpg"
             ),
             new ProductSummary(
                 "xyPoqGJxYR4Nn3yVGQcfI",
                 "Acer",
                 "Iconia Tab 10 A3-A40",
                 "230",
-                "https://2gm2eu9uuw.us-east-1.awsapprunner.com/images/xyPoqGJxYR4Nn3yVGQcfI.jpg"
+                "https://itx-frontend-test.onrender.com/images/xyPoqGJxYR4Nn3yVGQcfI.jpg"
             ),
             new ProductSummary(
                 "ND1elEt4nqZrCeFflDUZ2",
                 "Acer",
                 "Liquid X2",
                 "230",
-                "https://2gm2eu9uuw.us-east-1.awsapprunner.com/images/ND1elEt4nqZrCeFflDUZ2.jpg"
+                "https://itx-frontend-test.onrender.com/images/ND1elEt4nqZrCeFflDUZ2.jpg"
             ),
         ]
     }

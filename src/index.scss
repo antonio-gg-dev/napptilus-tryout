@@ -1,3 +1,9 @@
 @tailwind base;
+
+body {
+  @apply bg-fixed bg-cover bg-center;
+  background-image: url("~/public/background.png");
+}
+
 @tailwind components;
 @tailwind utilities;

@@ -1,0 +1,25 @@
+.product-list-item {
+    &__card {
+        @apply card glass w-96 shadow-xl overflow-hidden;
+    }
+
+    &__image {
+        @apply h-48 w-full p-4 object-contain bg-white;
+    }
+
+    &__model {
+        @apply card-title mt-4 mx-6;
+    }
+
+    &__brand {
+        @apply badge mt-4 mx-6 absolute top-0 left-0;
+    }
+
+    &__price {
+        @apply btn btn-sm btn-primary my-4 mx-6 justify-self-end text-lg ml-auto;
+    }
+
+    &__link {
+        @apply absolute inset-0;
+    }
+}

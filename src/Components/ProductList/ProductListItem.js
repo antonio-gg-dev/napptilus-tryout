@@ -1,20 +1,34 @@
 import {Link} from "react-router-dom";
+import styles from "./ProductListItem.module.scss"
 
 /**
  * @param product {ProductSummary}
  */
 export function ProductListItem({ product }) {
     return (
-        <Link
-            to={`/products/${product.id}`}
-        >
+        <div className={styles['product-list-item__card']}>
             <img
+                className={styles['product-list-item__image']}
                 src={product.imageUrl}
                 alt={product.imageAlt}
             />
-            <strong>{product.model}</strong>
-            {product.brand}
-            {product.humanPrice}
-        </Link>
+            <strong className={styles['product-list-item__model']}>
+                {product.model}
+            </strong>
+            <span className={styles['product-list-item__brand']}>
+                {product.brand}
+            </span>
+            <span className={styles['product-list-item__price']}>
+                {product.humanPrice}
+            </span>
+            <Link
+                className={styles['product-list-item__link']}
+                to={`/products/${product.id}`}
+            >
+                <span class="sr-only">
+                    Ver producto
+                </span>
+            </Link>
+        </div>
     )
 }

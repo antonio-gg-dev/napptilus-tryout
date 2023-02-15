@@ -1,9 +1,9 @@
-import {ProductService} from "../Services/ProductService";
+import {ProductSummaryService} from "../Services/ProductSummaryService";
 import {ProductList} from "../Components/ProductList/ProductList";
 
 export function ProductListPage () {
-    const productService = new ProductService()
-    const products = productService.getProductList()
+    const productSummaryService = new ProductSummaryService()
+    const products = productSummaryService.getProductList()
 
     return (
         <ProductList
