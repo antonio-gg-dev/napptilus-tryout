@@ -1,6 +1,6 @@
 .product-list-item {
     &__card {
-        @apply card glass w-96 shadow-xl overflow-hidden;
+        @apply card glass shadow-xl overflow-hidden;
     }
 
     &__image {
@@ -8,7 +8,7 @@
     }
 
     &__model {
-        @apply card-title mt-4 mx-6;
+        @apply block card-title mt-4 mx-6 truncate;
     }
 
     &__brand {

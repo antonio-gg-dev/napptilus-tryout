@@ -1,0 +1,17 @@
+.product-list {
+  &__container {
+    @apply container gap-4 m-auto grid;
+
+    @screen sm {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @screen md {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @screen lg {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
