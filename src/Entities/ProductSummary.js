@@ -36,7 +36,7 @@ export class ProductSummary {
 
     get humanPrice () {
         if (this.soldOut) {
-            return
+            return null
         }
 
         return `${this.price.toFixed(2)} €`

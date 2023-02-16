@@ -1,3 +1,68 @@
 .product-detail {
+  &__container {
+    @apply container mx-auto;
+  }
 
+  &__card {
+    @apply grid gap-4 card glass;
+    grid-template-areas:
+      "title"
+      "image"
+      "buy"
+      "specs";
+
+    @screen lg {
+      grid-template-areas:
+      "title  title"
+      "image  buy"
+      "specs  specs";
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__title {
+    @apply mt-4 mx-6 mb-2 text-3xl font-bold;
+    grid-area: title;
+  }
+
+  &__image {
+    @apply block h-96 w-full p-8 object-contain bg-white;
+    grid-area: image;
+
+    @screen lg {
+      @apply rounded-r-2xl;
+    }
+  }
+
+  &__buy {
+    grid-area: buy;
+  }
+
+  &__specs {
+    grid-area: specs;
+  }
+
+  &__specs-title {
+    @apply mb-4 mx-6 text-2xl font-bold;
+  }
+
+  &__specs-table {
+    @apply w-full mb-4;
+
+    th {
+      @apply text-right py-2 px-6 w-1/4;
+    }
+
+    td {
+      @apply text-left py-2 px-6 w-3/4;
+    }
+
+    tr {
+      @apply transition-colors;
+    }
+
+    tr:hover {
+      @apply bg-white;
+    }
+  }
 }

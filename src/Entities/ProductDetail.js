@@ -28,7 +28,7 @@ export class ProductDetail {
      * @param battery {string}
      * @param primaryCamera {string}
      * @param secondaryCamera {string}
-     * @param dimensions {string}
+     * @param dimensions {string | null}
      * @param weight {number}
      * @param storages {string[]}
      * @param colors {string[]}
@@ -63,7 +63,7 @@ export class ProductDetail {
         this.battery = String(battery)
         this.primaryCamera = String(primaryCamera)
         this.secondaryCamera = String(secondaryCamera)
-        this.dimensions = String(dimensions)
+        this.dimensions = dimensions ? String(dimensions) : null
         this.weight = String(weight)
         this.storages = [...storages]
         this.colors = [...colors]
@@ -80,7 +80,7 @@ export class ProductDetail {
 
     get humanPrice () {
         if (this.soldOut) {
-            return
+            return null
         }
 
         return `${this.price.toFixed(2)} €`
@@ -88,5 +88,9 @@ export class ProductDetail {
 
     get soldOut () {
         return !this.price
+    }
+
+    get humanWeight () {
+        return `${this.weight} gr`
     }
 }

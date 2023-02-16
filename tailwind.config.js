@@ -4,7 +4,11 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      transitionDuration: {
+        DEFAULT: '300ms',
+      },
+    },
     container: {
       padding: {
         DEFAULT: '1rem',
