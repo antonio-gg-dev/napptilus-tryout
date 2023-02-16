@@ -1,0 +1,17 @@
+.navbar {
+    &__navbar {
+        @apply navbar glass mb-4 sticky top-0 inset-y-0 z-10;
+    }
+
+    &__container {
+        @apply container mx-auto;
+    }
+
+    &__logo {
+        @apply h-8 transition-opacity;
+
+        &:hover {
+            @apply opacity-70;
+        }
+    }
+}

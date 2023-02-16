@@ -37,44 +37,60 @@ export function ProductDetail ({ product }) {
                             <th>Modelo</th>
                             <td>{product.model}</td>
                         </tr>
-                        <tr>
-                            <th>Procesador</th>
-                            <td>{product.cpu}</td>
-                        </tr>
-                        <tr>
-                            <th>Memoria</th>
-                            <td>{product.ram}</td>
-                        </tr>
-                        <tr>
-                            <th>Sistema Operativo</th>
-                            <td>{product.os}</td>
-                        </tr>
-                        <tr>
-                            <th>Resolución</th>
-                            <td>{product.displayResolution}</td>
-                        </tr>
-                        <tr>
-                            <th>Batería</th>
-                            <td>{product.battery}</td>
-                        </tr>
-                        <tr>
-                            <th>Cámara Principal</th>
-                            <td>{product.primaryCamera}</td>
-                        </tr>
-                        <tr>
-                            <th>Cámara Secundaria</th>
-                            <td>{product.secondaryCamera}</td>
-                        </tr>
+                        { product.cpu &&
+                            <tr>
+                                <th>Procesador</th>
+                                <td>{product.cpu}</td>
+                            </tr>
+                        }
+                        { product.ram &&
+                            <tr>
+                                <th>Memoria</th>
+                                <td>{product.ram}</td>
+                            </tr>
+                        }
+                        { product.os &&
+                            <tr>
+                                <th>Sistema Operativo</th>
+                                <td>{product.os}</td>
+                            </tr>
+                        }
+                        { product.displayResolution &&
+                            <tr>
+                                <th>Resolución</th>
+                                <td>{product.displayResolution}</td>
+                            </tr>
+                        }
+                        { product.battery &&
+                            <tr>
+                                <th>Batería</th>
+                                <td>{product.battery}</td>
+                            </tr>
+                        }
+                        { product.primaryCamera &&
+                            <tr>
+                                <th>Cámara Principal</th>
+                                <td>{product.primaryCamera}</td>
+                            </tr>
+                        }
+                        { product.secondaryCamera &&
+                            <tr>
+                                <th>Cámara Secundaria</th>
+                                <td>{product.secondaryCamera}</td>
+                            </tr>
+                        }
                         { product.dimensions &&
                             <tr>
                                 <th>Dimensiones</th>
                                 <td>{product.dimensions}</td>
                             </tr>
                         }
-                        <tr>
-                            <th>Peso</th>
-                            <td>{product.humanWeight}</td>
-                        </tr>
+                        { product.weight &&
+                            <tr>
+                                <th>Peso</th>
+                                <td>{product.humanWeight}</td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>

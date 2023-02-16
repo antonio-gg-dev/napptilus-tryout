@@ -1,6 +1,10 @@
 .product-list-item {
     &__card {
-        @apply card glass shadow-xl overflow-hidden;
+        @apply card glass shadow-xl overflow-hidden transition-shadow shadow-xl;
+
+        &:hover {
+            @apply shadow-sm;
+        }
     }
 
     &__image {
