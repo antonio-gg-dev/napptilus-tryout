@@ -44,7 +44,7 @@ export class ProductDetailService {
             rawProductDetail.weight,
             [],// TODO: rawProductDetail.storages,
             [],// TODO: rawProductDetail.colors,
-            rawProductDetail.imageUrl
+            rawProductDetail.imgUrl
         )
     }
 }

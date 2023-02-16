@@ -2,6 +2,7 @@ import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {ProductDetailService} from "../Services/ProductDetailService";
 import {NotFound} from "./NotFound";
+import {ProductDetail} from "../Components/ProductDetail/ProductDetail";
 
 export function ProductDetailPage () {
     const {productId} = useParams()
@@ -24,8 +25,12 @@ export function ProductDetailPage () {
     }
 
     return (
-        <div>
-            Product Detail Page! {productId}
-        </div>
+        <>
+            { product &&
+                <ProductDetail
+                    product={product}
+                />
+            }
+        </>
     )
 }
