@@ -9,7 +9,10 @@ export function Navbar () {
     return (
         <nav className={styles['navbar__navbar']}>
             <div className={styles['navbar__container']}>
-                <Link to="/">
+                <Link
+                    className={styles['navbar__logo-link']}
+                    to="/"
+                >
                     <img
                         src="/logo.svg"
                         alt="AG Mobile"

@@ -9,9 +9,13 @@
         grid-template-columns: 1fr auto 1fr;
     }
 
-    &__logo {
-        @apply justify-self-start h-8 transition-opacity;
+    &__logo-link {
+        @apply justify-self-start;
         grid-area: logo;
+    }
+
+    &__logo {
+        @apply h-8 transition-opacity;
 
         &:hover {
             @apply opacity-70;
