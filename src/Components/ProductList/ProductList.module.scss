@@ -1,6 +1,22 @@
 .product-list {
   &__container {
-    @apply container gap-4 m-auto grid;
+    @apply container m-auto;
+  }
+
+  &__search {
+   @apply input-group input-group-lg w-2/3 mx-auto mb-4;
+  }
+
+  &__search-icon {
+    @apply h-8;
+  }
+
+  &__search-input {
+    @apply input input-bordered input-lg w-full;
+  }
+
+  &__list {
+    @apply grid gap-4;
 
     @screen sm {
       grid-template-columns: repeat(2, 1fr);
