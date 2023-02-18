@@ -1,5 +1,4 @@
 import {ProductListItem} from "./ProductListItem";
-import {BrowserRouter} from "react-router-dom";
 import {ProductSummary} from "../../Entities/ProductSummary";
 import {withRouter} from "storybook-addon-react-router-v6";
 
@@ -11,11 +10,9 @@ export default {
 const Template = (args) => {
 
     return (
-        <BrowserRouter>
-            <ProductListItem
-                {...args}
-            />
-        </BrowserRouter>
+        <ProductListItem
+            {...args}
+        />
     )
 }
 
