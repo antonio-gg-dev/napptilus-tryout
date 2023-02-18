@@ -4,7 +4,11 @@
   }
 
   &__search {
-   @apply input-group input-group-lg w-2/3 mx-auto mb-4;
+   @apply input-group input-group-lg w-full mx-auto mb-4;
+
+    @screen sm {
+      @apply w-2/3;
+    }
   }
 
   &__search-icon {

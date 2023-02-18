@@ -4,7 +4,7 @@
     }
 
     &__container {
-        @apply grid container mx-auto;
+        @apply grid container mx-auto gap-4;
         grid-template-areas: "logo breadcrumb cart";
         grid-template-columns: 1fr auto 1fr;
     }
@@ -14,11 +14,27 @@
         grid-area: logo;
     }
 
-    &__logo {
+    &__logo-mini {
         @apply h-8 transition-opacity;
 
         &:hover {
             @apply opacity-70;
+        }
+
+        @screen sm {
+            @apply hidden;
+        }
+    }
+
+    &__logo {
+        @apply hidden h-8 transition-opacity;
+
+        &:hover {
+            @apply opacity-70;
+        }
+
+        @screen sm {
+            @apply block;
         }
     }
 

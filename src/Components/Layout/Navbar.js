@@ -16,6 +16,11 @@ export function Navbar () {
                     to="/"
                 >
                     <img
+                        src="/logo-mini.svg"
+                        alt="AG Mobile"
+                        className={styles['navbar__logo-mini']}
+                    />
+                    <img
                         src="/logo.svg"
                         alt="AG Mobile"
                         className={styles['navbar__logo']}
