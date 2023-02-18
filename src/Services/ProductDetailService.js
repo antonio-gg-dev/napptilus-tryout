@@ -1,4 +1,6 @@
 import {ProductDetail} from "../Entities/ProductDetail";
+import {Storage} from "../Entities/VO/Storage";
+import {Color} from "../Entities/VO/Color";
 
 export class ProductDetailService {
     /**
@@ -42,8 +44,14 @@ export class ProductDetailService {
             [rawProductDetail.secondaryCmera].flat().join(' '), // NOTE: There is a typo on the API response
             rawProductDetail.dimensions,
             rawProductDetail.weight,
-            [],// TODO: rawProductDetail.storages,
-            [],// TODO: rawProductDetail.colors,
+            rawProductDetail.options.storages.map((storage) => new Storage(
+                storage.code,
+                storage.name
+            )),
+            rawProductDetail.options.colors.map((color) => new Color(
+                color.code,
+                color.name
+            )),
             rawProductDetail.imgUrl
         )
     }

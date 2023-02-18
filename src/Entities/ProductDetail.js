@@ -30,8 +30,8 @@ export class ProductDetail {
      * @param secondaryCamera {string}
      * @param dimensions {string | null}
      * @param weight {number}
-     * @param storages {string[]}
-     * @param colors {string[]}
+     * @param storages {Storage[]}
+     * @param colors {Color[]}
      * @param imageUrl {string}
      */
     constructor(
