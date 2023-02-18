@@ -27,7 +27,6 @@ export function ProductListItem({ product }) {
                 </span>
                 : <span
                     className={styles['product-list-item__sold-out']}
-                    data-testid="product-sold-out"
                 >
                     Agotado!
                 </span>
@@ -35,7 +34,6 @@ export function ProductListItem({ product }) {
             <Link
                 className={styles['product-list-item__link']}
                 to={`/products/${product.id}`}
-                data-testid="product-link"
             >
                 <span className="sr-only">
                     Ver producto
