@@ -19,12 +19,23 @@ export function ProductListItem({ product }) {
                 {product.brand}
             </span>
             { !product.soldOut
-                ? <span className={styles['product-list-item__price']}>{product.humanPrice}</span>
-                : <span className={styles['product-list-item__sold-out']}>Agotado!</span>
+                ? <span
+                    className={styles['product-list-item__price']}
+                    data-testid="product-price"
+                >
+                    {product.humanPrice}
+                </span>
+                : <span
+                    className={styles['product-list-item__sold-out']}
+                    data-testid="product-sold-out"
+                >
+                    Agotado!
+                </span>
             }
             <Link
                 className={styles['product-list-item__link']}
                 to={`/products/${product.id}`}
+                data-testid="product-link"
             >
                 <span className="sr-only">
                     Ver producto
