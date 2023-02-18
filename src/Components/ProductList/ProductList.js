@@ -42,10 +42,14 @@ export function ProductList({ products }) {
                     value={searchString}
                     onChange={({ target }) => setSearchString(target.value)}
                     placeholder="Escribe aquí para buscar"
+                    data-testid="search-input"
                 />
             </label>
 
-            <div className={styles['product-list__list']}>
+            <div
+                className={styles['product-list__list']}
+                data-testid="product-list"
+            >
                 { filteredProducts().map(product => {
                     return (
                         <ProductListItem
