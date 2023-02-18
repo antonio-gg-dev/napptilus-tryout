@@ -23,7 +23,7 @@
     }
 
     &__breadcrumb {
-        @apply justify-self-center;
+        @apply breadcrumbs text-sm justify-self-center;
     }
 
     &__cart-container {
