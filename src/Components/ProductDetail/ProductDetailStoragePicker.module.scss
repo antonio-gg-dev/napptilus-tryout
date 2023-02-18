@@ -1,0 +1,31 @@
+.product-detail-storage-picker {
+  &__storage-title {
+    @apply font-bold mb-4 text-xl;
+  }
+
+  &__storage-picker {
+    @apply grid gap-8 p-2 justify-between mb-8;
+    grid-template-columns: 1fr;
+
+    @screen sm {
+      grid-template-columns: repeat(auto-fill, minmax(theme('spacing.32'), 1fr));
+    }
+  }
+
+  &__storage-option {
+    @apply grid justify-center content-center w-full h-10 rounded-full outline outline-4 text-center transition-all
+    shadow-xl bg-base-100 outline-base-content font-bold;
+
+    &:hover, &:focus {
+      @apply opacity-60 shadow;
+    }
+
+    &--active {
+      @apply outline-offset-4 text-primary outline-primary;
+    }
+
+    input {
+      @apply appearance-none;
+    }
+  }
+}
