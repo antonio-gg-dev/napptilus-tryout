@@ -14,11 +14,9 @@ describe('src/Components/ProductList/ProductListItem.js', () => {
         )
 
         render(
-            <BrowserRouter>
-                <ProductListItem
-                    product={productFixture}
-                />
-            </BrowserRouter>
+            <ProductListItem
+                product={productFixture}
+            />
         )
 
         expect(screen.getByTestId('product-link')).toHaveAttribute('href', '/products/some-id')
