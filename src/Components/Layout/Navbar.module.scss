@@ -4,14 +4,34 @@
     }
 
     &__container {
-        @apply container mx-auto;
+        @apply grid container mx-auto;
+        grid-template-areas: "logo breadcrumb cart";
+        grid-template-columns: 1fr auto 1fr;
     }
 
     &__logo {
-        @apply h-8 transition-opacity;
+        @apply justify-self-start h-8 transition-opacity;
+        grid-area: logo;
 
         &:hover {
             @apply opacity-70;
         }
+    }
+
+    &__breadcrumb {
+        @apply justify-self-center;
+    }
+
+    &__cart-container {
+        @apply justify-self-end relative h-8 w-8;
+        grid-area: cart;
+    }
+
+    &__cart-icon {
+        @apply absolute inset-0;
+    }
+
+    &__cart-label {
+        @apply text-white absolute inset-0 text-center font-bold leading-none pl-1;
     }
 }
