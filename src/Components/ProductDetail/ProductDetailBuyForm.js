@@ -33,12 +33,18 @@ export function ProductDetailBuyForm ({ product }) {
                 setActiveStorageCode={setActiveStorageCode}
             />
 
-            <button
-                className={styles['product-detail-buy-form__buy-button']}
-                onClick={handleBuy}
-            >
-                Comprar!
-            </button>
+            { product.soldOut
+                ? <span className={styles['product-detail-buy-form__sold-out']}>
+                    Agotado!
+                </span>
+                : <button
+                    className={styles['product-detail-buy-form__buy-button']}
+                    onClick={handleBuy}
+                >
+                    Comprar!
+                </button>
+            }
+
         </div>
     )
 }

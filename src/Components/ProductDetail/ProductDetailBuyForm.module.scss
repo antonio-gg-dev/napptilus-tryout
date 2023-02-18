@@ -7,6 +7,10 @@
     }
   }
 
+  &__sold-out {
+    @apply btn btn-ghost btn-lg btn-block;
+  }
+
   &__buy-button {
     @apply btn btn-primary btn-lg btn-block;
   }
