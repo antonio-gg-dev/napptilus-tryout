@@ -1,11 +1,23 @@
-import {ProductDetailSpecsTable} from "./ProductDetailSpecsTable";
-import {ProductDetail} from "../../Entities/ProductDetail";
+import {ProductDetail} from "./ProductDetail";
+import {ProductDetail as ProductDetailEntity} from "../../Entities/ProductDetail";
+import {Storage} from "../../Entities/VO/Storage";
+import {Color} from "../../Entities/VO/Color";
+import {withReactContext} from "storybook-react-context";
+import {CartCountContext} from "../../Contexts/CartCountContext";
 
 export default {
-    component: ProductDetailSpecsTable,
+    component: ProductDetail,
+    decorators: [withReactContext({
+        Context: CartCountContext,
+        initialState: {
+            cartCount: 0,
+            setCartCount: () => {}
+        },
+    })],
     argTypes: {
         brand: { type: 'string' },
         model: { type: 'string' },
+        price: { type: 'number' },
         cpu: { type: 'string' },
         ram: { type: 'string' },
         os: { type: 'string' },
@@ -15,15 +27,18 @@ export default {
         secondaryCamera: { type: 'string' },
         dimensions: { type: 'string' },
         weight: { type: 'string' },
+        storages: { control: 'object' },
+        colors: { control: 'object' },
+        imageUrl: { type: 'string' },
     },
 }
 
 const Builder = (args) => {
-    const product = new ProductDetail(
+    const product = new ProductDetailEntity(
         'some-id',
         args.brand,
         args.model,
-        null,
+        args.price,
         args.cpu,
         args.ram,
         args.os,
@@ -33,12 +48,12 @@ const Builder = (args) => {
         args.secondaryCamera,
         args.dimensions,
         args.weight,
-        [],
-        [],
-        '',
+        args.storages.map((storage, index) => new Storage(index, storage)),
+        args.colors.map((color, index) => new Color(index, color)),
+        args.imageUrl,
     )
 
-    return <ProductDetailSpecsTable
+    return <ProductDetail
         product={product}
     />
 }
@@ -47,6 +62,7 @@ export const Default = (args) => Builder(args)
 Default.args = {
     brand: 'Acer',
     model: 'Iconia Talk S',
+    price: 195,
     cpu: 'Quad-core 1.3 GHz Cortex-A53',
     ram: '2 GB RAM',
     os: 'Android 6.0 (Marshmallow)',
@@ -56,20 +72,14 @@ Default.args = {
     secondaryCamera: '2 MP 720p',
     dimensions: '191.7 x 101 x 9.4 mm (7.55 x 3.98 x 0.37 in)',
     weight: '260',
+    colors: [
+        'Black',
+        'White',
+        'Silver',
+    ],
+    storages: [
+        '16 GB',
+        '32 GB',
+    ],
+    imageUrl: '/stories/product-image.jpg',
 }
-
-export const NoSpecs = (args) => Builder(args)
-NoSpecs.args = {
-    brand: 'Acer',
-    model: 'Iconia Talk S',
-    cpu: '',
-    ram: '',
-    os: '',
-    displayResolution: '',
-    battery: '',
-    primaryCamera: '',
-    secondaryCamera: '',
-    dimensions: '',
-    weight: '',
-}
-
