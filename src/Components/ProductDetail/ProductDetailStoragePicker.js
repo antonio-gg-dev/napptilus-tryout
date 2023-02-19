@@ -28,6 +28,7 @@ export function ProductDetailStoragePicker ({ storages, activeStorageCode, setAc
                             name="storage"
                             onChange={() => setActiveStorageCode(storage.code)}
                             checked={activeStorageCode === storage.code}
+                            data-testid="storage-input"
                         />
                     </label>
                 )) }
