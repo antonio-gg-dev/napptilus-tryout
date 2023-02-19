@@ -41,7 +41,7 @@ export function ProductDetailBuyForm ({ product }) {
                     className={styles['product-detail-buy-form__buy-button']}
                     onClick={handleBuy}
                 >
-                    Comprar!
+                    Comprar por {product.humanPrice}!
                 </button>
             }
 
