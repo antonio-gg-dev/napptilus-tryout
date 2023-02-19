@@ -9,7 +9,7 @@ import {buyProduct} from "../../Services/CartService";
 jest.mock('../../Services/CartService')
 
 describe('src/Components/ProductDetail/ProductDetailBuyForm.js', () => {
-    it('should call cartService.buyProduct when buy button is clicked', async () => {
+    it('should call buyProduct service when buy button is clicked', async () => {
         const product = new ProductDetail(
             'expected-id',
             'Acer',
