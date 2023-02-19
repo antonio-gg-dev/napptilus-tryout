@@ -42,7 +42,7 @@ export class ProductDetailService {
             rawProductDetail.battery,
             [rawProductDetail.primaryCamera].flat().join(' '),
             [rawProductDetail.secondaryCmera].flat().join(' '), // NOTE: There is a typo on the API response
-            rawProductDetail.dimensions,
+            rawProductDetail.dimentions,
             rawProductDetail.weight,
             rawProductDetail.options.storages.map((storage) => new Storage(
                 storage.code,
