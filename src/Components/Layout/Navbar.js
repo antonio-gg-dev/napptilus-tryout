@@ -33,8 +33,15 @@ export function Navbar () {
                             return (
                                 <li key={index}>
                                     { breadcrumb.url
-                                        ? <Link to={breadcrumb.url}>{breadcrumb.name}</Link>
-                                        : <span>{breadcrumb.name}</span>
+                                        ? <Link
+                                            to={breadcrumb.url}
+                                            data-testid="breadcrumb-link"
+                                        >
+                                            {breadcrumb.name}
+                                        </Link>
+                                        : <span>
+                                            {breadcrumb.name}
+                                        </span>
                                     }
                                 </li>
                             )
