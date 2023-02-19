@@ -32,6 +32,7 @@ export function ProductDetailColorPicker ({ colors, activeColorCode, setActiveCo
                             name="color"
                             onChange={() => setActiveColorCode(color.code)}
                             checked={activeColorCode === color.code}
+                            data-testid="color-input"
                         />
                     </label>
                 )) }
