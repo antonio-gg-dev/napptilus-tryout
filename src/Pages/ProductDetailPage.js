@@ -1,6 +1,6 @@
 import {useParams} from "react-router-dom";
 import {useContext, useEffect, useState} from "react";
-import {ProductDetailService} from "../Services/ProductDetailService";
+import {getProductById} from "../Services/ProductDetailService";
 import {NotFound} from "./NotFound";
 import {ProductDetail} from "../Components/ProductDetail/ProductDetail";
 import {Breadcrumb} from "../Entities/VO/Breadcrumb";
@@ -13,13 +13,12 @@ export function ProductDetailPage () {
     const {setBreadcrumbs} = useContext(BreadcrumbContext)
 
     useEffect(() => {
-        const productDetailService = new ProductDetailService()
-        const getProductById = async (productId) => {
-            setProduct(await productDetailService.getProductById(productId))
+        const loadProductById = async (productId) => {
+            setProduct(await getProductById(productId))
             setLoading(false)
         }
 
-        getProductById(productId)
+        loadProductById(productId)
     }, [productId])
 
     useEffect(() => {

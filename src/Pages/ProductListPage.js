@@ -1,4 +1,4 @@
-import {ProductSummaryService} from "../Services/ProductSummaryService";
+import {getProductList} from "../Services/ProductSummaryService";
 import {ProductList} from "../Components/ProductList/ProductList";
 import {useContext, useEffect, useState} from "react";
 import {BreadcrumbContext} from "../Contexts/BreadcrumbContext";
@@ -9,14 +9,13 @@ export function ProductListPage () {
     const {setBreadcrumbs} = useContext(BreadcrumbContext)
 
     useEffect(() => {
-        const productSummaryService = new ProductSummaryService()
-        const getProductList = async () => setProducts(await productSummaryService.getProductList())
+        const loadProductList = async () => setProducts(await getProductList())
 
         setBreadcrumbs([
             new Breadcrumb('Productos')
         ])
 
-        getProductList()
+        loadProductList()
     }, [setBreadcrumbs])
 
     return (

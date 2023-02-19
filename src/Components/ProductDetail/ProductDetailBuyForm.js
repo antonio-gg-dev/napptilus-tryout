@@ -3,7 +3,7 @@ import styles from "./ProductDetailBuyForm.module.scss"
 import {ProductDetailColorPicker} from "./ProductDetailColorPicker";
 import {ProductDetailStoragePicker} from "./ProductDetailStoragePicker";
 import {CartCountContext} from "../../Contexts/CartCountContext";
-import {CartService} from "../../Services/CartService";
+import {buyProduct} from "../../Services/CartService";
 
 /**
  * @param product {ProductDetail}
@@ -12,10 +12,9 @@ export function ProductDetailBuyForm ({ product }) {
     const [activeColorCode, setActiveColorCode] = useState(product.colors[0].code)
     const [activeStorageCode, setActiveStorageCode] = useState(product.storages[0].code)
     const {setCartCount} = useContext(CartCountContext);
-    const cartService = new CartService()
 
     const handleBuy = async () => {
-        const newCartCount = await cartService.buyProduct(product.id, activeColorCode, activeStorageCode)
+        const newCartCount = await buyProduct(product.id, activeColorCode, activeStorageCode)
         setCartCount(newCartCount)
     }
 
@@ -34,12 +33,16 @@ export function ProductDetailBuyForm ({ product }) {
             />
 
             { product.soldOut
-                ? <span className={styles['product-detail-buy-form__sold-out']}>
+                ? <span
+                    className={styles['product-detail-buy-form__sold-out']}
+                    data-testid="sold-out"
+                >
                     Agotado!
                 </span>
                 : <button
                     className={styles['product-detail-buy-form__buy-button']}
                     onClick={handleBuy}
+                    data-testid="buy-button"
                 >
                     Comprar por {product.humanPrice}!
                 </button>
