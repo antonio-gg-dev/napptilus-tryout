@@ -14,7 +14,7 @@
 
   &__color-option {
     @apply grid justify-center content-center w-full h-10 rounded-full outline outline-4 text-center transition-all
-    shadow-xl font-bold select-none;
+    shadow-xl font-bold select-none overflow-hidden;
 
     outline-color: var(--color, theme('colors.base-content'));
     background-color: var(--color, theme('colors.base-100'));
